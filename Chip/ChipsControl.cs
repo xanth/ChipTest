@@ -33,24 +33,7 @@ namespace Chip
                 SetValue(ItemsSourceProperty, value);
             }
         }
-
-        public static DependencyProperty MaxDisplayedCharactersProperty = DependencyProperty.Register("MaxDisplayedCharacters",
-                                                                                                            typeof(int),
-                                                                                                            typeof(ChipsControl),
-                                                                                                            new PropertyMetadata(9));
-
-        public int MaxDisplayedCharacters
-        {
-            get
-            {
-                return (int)GetValue(MaxDisplayedCharactersProperty);
-            }
-            set
-            {
-                SetValue(MaxDisplayedCharactersProperty, value);
-            }
-        }
-
+        
        private ICommand removeChipCommand;
        public ICommand RemoveChipCommand
         {

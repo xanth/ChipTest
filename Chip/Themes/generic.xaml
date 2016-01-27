@@ -10,7 +10,7 @@
                 <ControlTemplate TargetType="{x:Type Chip:ChipControl}">
                     <Grid>
                         <Grid.ToolTip>
-                            <Border Padding="5" BorderThickness="1" MaxWidth="300">
+                            <Border Padding="5" BorderThickness="1">
                                 <StackPanel >
                                     <WrapPanel>
                                         <TextBlock FontSize="15" Text="{TemplateBinding Text}"/>
@@ -29,7 +29,7 @@
                                 <StackPanel.Resources>
                                    <Chip:TruncateStringConverter x:Key="TruncateStringConverter"></Chip:TruncateStringConverter> 
                                 </StackPanel.Resources>
-                                <TextBlock x:Name="ChipText" Text="{TemplateBinding Text}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,8,0"/>
+                                <TextBlock MaxWidth="55" x:Name="ChipText" Text="{TemplateBinding Text}" TextTrimming="CharacterEllipsis" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,8,0"/>
                                 <Button Command="{TemplateBinding RemoveChipCommand}" CommandParameter="{TemplateBinding RemoveChipCommandParameter}" BorderBrush="Transparent" Background="Transparent">
                                     <fa:ImageAwesome Icon="Times" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,5,0" Width="10" Height="10"/>
                                 </Button>

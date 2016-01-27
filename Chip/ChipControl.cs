@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Input;
@@ -13,24 +14,16 @@ namespace Chip
 
         }
 
-        //public override void OnApplyTemplate()
-        //{
-        //    var textbox = Template.FindName("ChipText", this) as TextBlock;
-        //    if (textbox != null)
-        //        textbox.Text = "Roman was right";
-        //}
-
         public static readonly DependencyProperty TextProperty = DependencyProperty.Register("Text", 
                                                                                                 typeof(string), 
                                                                                                 typeof(ChipControl), 
                                                                                                 new PropertyMetadata(null));
 
-        
-        public string DisplayText
+        public string Text
         {
             get
             {
-                return (string) GetValue(TextProperty);                
+                return (string) GetValue(TextProperty); 
             }
             set
             {
@@ -69,22 +62,6 @@ namespace Chip
             set
             {
                 SetValue(RemoveChipCommandParameterProperty, value);
-            }
-        }
-
-        public static DependencyProperty MaxDisplayedCharactersProperty = DependencyProperty.Register("MaxDisplayedCharacters",
-                                                                                                            typeof(int),
-                                                                                                            typeof(ChipControl),
-                                                                                                            new PropertyMetadata(9));
-        public int MaxDisplayedCharacters
-        {
-            get
-            {
-                return (int)GetValue(MaxDisplayedCharactersProperty);
-            }
-            set
-            {
-                SetValue(MaxDisplayedCharactersProperty, value);
             }
         }
     }
